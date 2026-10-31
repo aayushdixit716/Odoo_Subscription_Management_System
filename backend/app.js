@@ -10,6 +10,7 @@ const subscriptionRoutes = require("./routes/subscriptionRoutes");
 const invoiceRoutes = require("./routes/invoiceRoutes");
 const paymentRoutes = require("./routes/paymentRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
+const customerRoutes = require("./routes/customerRoutes");
 dotenv.config();
 dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
@@ -27,6 +28,7 @@ app.use("/api/subscriptions", subscriptionRoutes);
 app.use("/api/invoices", invoiceRoutes);
 app.use("/api/payments", paymentRoutes);
 app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/customers", customerRoutes);
 // Test route
 app.get("/", (req, res) => {
     res.status(200).json({
