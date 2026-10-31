@@ -1,4 +1,5 @@
 const express = require("express");
+const authRoutes = require("./routes/authRoutes");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
@@ -12,6 +13,7 @@ const app = express();
 // Middlewares
 app.use(cors());
 app.use(express.json());
+app.use("/api/auth", authRoutes);
 
 // Test route
 app.get("/", (req, res) => {
